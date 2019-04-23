@@ -5,17 +5,18 @@
     <div class="list-group-item" *ngFor="let defectiune of defectiuni; let i = index"
          [class.selected]="defectiune === selectedDefectiune"
          (click)="onSelect(defectiune, i)">
-      <span>Nume: {{defectiune.Nume}}   |    Cost: {{defectiune.Cost}}</span>
-      <form *ngIf="editing">
+
+      <span [hidden]="defectiune === selectedDefectiune">Nume: {{defectiune.Nume}}   |    Cost: {{defectiune.Cost}}</span>
+
+      <form *ngIf="defectiune === selectedDefectiune">
         <label>Nume:</label>
-        <input type="text" #Nume placeholder="Nume" />
+        <input type="text" #Nume placeholder="Nume" [value]="selectedDefectiune.Nume" />
         <label>Cost:</label>
-        <input type="text" #Cost placeholder="Cost" />
+        <input type="text" #Cost placeholder="Cost" [value]="selectedDefectiune.Cost" />
         <button class="btn btn-outline-danger" type="submit" (click)="update(defectiune.Id, Nume.value, Cost.value)">Salveaza</button>
-
       </form>
-      <button class="btn btn-primary float-right" (click)="edit()">Edit</button>
 
+      <!--<button [hidden]="defectiune !== selectedDefectiune" class="btn btn-primary float-right" (click)="edit()">Edit</button>-->
     </div>
   </div>
 

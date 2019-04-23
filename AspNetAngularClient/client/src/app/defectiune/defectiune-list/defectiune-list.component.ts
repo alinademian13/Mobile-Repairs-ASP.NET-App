@@ -32,7 +32,6 @@ export class DefectiuneListComponent implements OnInit {
   onSelect(defectiune: DefectiuneId, index: number): void {
     this.selectedDefectiune = defectiune;
     this.selectedDefectiuneIndex = index;
-    console.log(this.selectedDefectiune);
   }
 
   goToAdd(): void {
@@ -54,9 +53,9 @@ export class DefectiuneListComponent implements OnInit {
     }
   }
 
-  edit(): void {
-    this.editing = true;
-  }
+  //edit(): void {
+  //  this.editing = true;
+  //}
 
   goBack(): void {
     this.location.back();
@@ -65,11 +64,11 @@ export class DefectiuneListComponent implements OnInit {
   update(id, nume, cost) {
     this.defectiuneService.update(id, nume, cost)
       .then(rsp => {
-        if (rsp === 'updated') {
-          console.log("aaaaaaaaaaaaa!!!");
-          window.location.reload();
-          this.editing = false;
-        }
+        this.defectiuni[this.selectedDefectiuneIndex].Nume = nume;
+        this.defectiuni[this.selectedDefectiuneIndex].Cost = cost;
+
+        this.selectedDefectiune = null;
+        this.selectedDefectiuneIndex = -1;
       }, error => {
         console.log('error', error);
       });
