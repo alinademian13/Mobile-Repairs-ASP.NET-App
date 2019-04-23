@@ -1,0 +1,51 @@
+<h2>add new client</h2>
+
+<!--<div class="container register-form">
+  <div class="form">
+
+    <div class="form-content">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Nume *" value="" />
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Email *" value="" />
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Adresa *" value="" />
+          </div>
+        </div>
+        <div class="col-md-6">
+
+
+        </div>
+      </div>
+      <button type="button" class="btnSubmit">Submit</button>
+    </div>
+  </div>
+</div>-->
+
+<table>
+  <tr>
+    <td><label>Nume:</label></td>
+    <td><input #nume></td>
+
+  </tr>
+  <tr>
+    <td><label>Email:</label></td>
+    <td><input #email></td>
+
+  </tr>
+  <tr>
+    <td><label>Adresa:</label></td>
+    <td><input #adresa></td>
+
+  </tr>
+</table>
+
+<div class="save-btn">
+  <button (click)="addClient(nume.value, email.value,adresa.value)" type="button" class="btn btn-outline-danger">
+    Adauga
+  </button>
+</div>

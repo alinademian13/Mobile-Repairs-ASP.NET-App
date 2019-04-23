@@ -1,0 +1,46 @@
+<h1>Clientssssss</h1>
+<!--<div *ngFor="let client of clients">
+  <label>{{client.ID_Client}}</label>
+  <label>{{client.Nume}}</label>
+  <label>{{client.Email}}</label>
+  <label>{{client.Adresa}}</label>
+</div>
+        -->
+<div class="row" style="margin-top:30px">
+  <div class="offset-md-2 col-md-6">
+    <button class="btn btn-primary" style="float:right" (click)="addClient()">Add</button>
+    <div class="input-group">
+      <input class="form-control" [(ngModel)]="filter" placeholder="Search clients"/>
+      <div class="input-group-append">
+        <span class="input-group-text"><i class="fas fa-search" (click)="search()"></i></span>
+      </div>
+    </div>
+
+    <div class="list-group">
+      <div class="list-group-item" *ngFor="let client of clients">
+        <img src="http://warac.co.za/wp-content/uploads/2016/06/Placeholder_Person.jpg" style="height:80px;width:80px"/>
+
+        <span>Id:{{client.ID_Client}}Email:{{client.Email}}|Nume: {{client.Nume}} </span>
+        <!--<form *ngIf="editing">
+    <label>Email:</label>
+    <input type="text" #email placeholder="Email" ng-required />
+    <label>Nume:</label>
+    <input type="text" #nume placeholder="Nume" ng-required />
+    <label>Adresa:</label>
+    <input type="text" #adresa placeholder="Adresa" ng-required />
+    <br />
+    <button class="btn" type="submit" (click)="saveClient(client.ClientId,nume.value,email.value,adresa.value)">Save</button>
+  </form>
+  <button class="btn btn-primary" style="float:right" (click)="editClient(client)">Edit</button>-->
+        <button class="btn btn-primary" style="float:right" (click)="gotoDetail(client)">Details</button>
+      </div>
+    </div>
+    <span><button (click)="prevPage()"><i class="fas fa-angle-left"></i></button>
+      {{page + 1}}  out of {{ count}} items <button (click)="nextPage()"><i
+        class="fas fa-angle-right"></i></button></span>
+  </div>
+
+</div>
+
+
+

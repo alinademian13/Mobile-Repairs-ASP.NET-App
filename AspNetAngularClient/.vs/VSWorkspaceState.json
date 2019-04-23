@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\client",
+    "\\client\\src",
+    "\\client\\src\\app",
+    "\\client\\src\\app\\client",
+    "\\client\\src\\app\\guards",
+    "\\client\\src\\app\\login",
+    "\\client\\src\\app\\service"
+  ],
+  "SelectedNode": "\\client\\src\\app\\guards\\auth-guard.ts",
+  "PreviewInSolutionExplorer": false
+}

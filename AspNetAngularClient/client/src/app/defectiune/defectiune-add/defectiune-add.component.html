@@ -1,0 +1,18 @@
+<h1>Adauga Defectiune:</h1>
+
+<table>
+  <tr>
+    <td><label>Nume:</label></td>
+    <td><input #nume></td>
+  </tr>
+  <tr>
+    <td><label>Cost:</label></td>
+    <td><input #cost></td>
+  </tr>
+
+</table>
+
+<button (click)="add(nume.value, cost.value)" type="button" class="btn btn-outline-danger">Adauga</button>
+
+<button (click)="goBack()" type="button" class="btn btn-outline-danger">Back</button>
+

@@ -1,0 +1,46 @@
+<h2>Telefoane</h2>
+<ol class="telefoane">
+  <li *ngFor="let telefon of telefonList "
+      [class.selected]="telefon === telefonSelected"
+      (click)="onSelect(telefon)">
+    {{telefon.IdTelefon}} {{telefon.Brand}} {{telefon.Marca}}
+  </li>
+</ol>
+
+<div *ngIf="telefonSelected">
+  <h2>
+    {{telefonSelected.Marca | uppercase}}  {{telefonSelected.Brand}} was selected
+  </h2>
+
+</div>
+<div *ngIf="blabla == 'add' ">
+  <div class="form-group">
+    <label for="marca">Marca: </label>
+    <input #marca type="text" class="form-control" id="marca">
+  </div>
+  <div class="form-group">
+    <label for="brand">Brand: </label>
+    <input #brand type="text" class="form-control" id="brand">
+    <button type="button" class="btn btn-primary " (click)="addTelefon(marca.value,brand.value)"> Submit</button>
+  </div>
+</div>
+
+
+<div *ngIf="blabla == 'edit' ">
+  <div class="form-group">
+    <label for="marcaEdit">Marca: </label>
+    <input #marcaEdit type="text" class="form-control" id="marcaEdit">
+  </div>
+  <div class="form-group">
+    <label for="brandEdit">Brand: </label>
+    <input #brandEdit type="text" class="form-control" id="brandEdit">
+    <button type="button" class="btn btn-primary " (click)="editTelefon(marcaEdit.value,brandEdit.value)"> Submit
+    </button>
+  </div>
+</div>
+
+
+<button type="button" class="btn btn-primary" (click)="blabla ='add' ">Add telefon</button>
+<button type="button" class="btn btn-primary" (click)="deleteTelefon()">Delete telefon</button>
+<button type="button" class="btn btn-primary" (click)="blabla ='edit'">Edit telefon</button>
+
